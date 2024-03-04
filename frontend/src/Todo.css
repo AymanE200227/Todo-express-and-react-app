@@ -1,5 +1,88 @@
-/* Todo.css */
 
-.selected {
-  background-color: red;
+
+/* Container styles */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Title styles */
+h1 {
+  text-align: center;
+}
+
+/* Input styles */
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+/* Button styles */
+button {
+  padding: 8px 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  float: right;
+}
+
+/* Todo list styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 20px);
+}
+
+/* Selected todo styles */
+li.selected {
+  background-color: #c7ecee;
+}
+
+/* Delete button styles */
+button.delete {
+  margin-left: auto;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Select button styles */
+button.select {
+  margin-left: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.add-btn{
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.delete-btn{
+  background-color: #e74c3c ;
+  color: white;
+}
+.select-btn{
+  background-color: rgb(112, 186, 0) ;
+  color: white;
+
+}
+.delete-selected-btn{
+  background-color: #e74c3c ;
+  color: white;
 }

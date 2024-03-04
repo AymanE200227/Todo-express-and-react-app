@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Todo.css'; // Import CSS file for styling
+import './Todo.css'; 
 
 function Todo() {
     const [todos, setTodos] = useState([]);
@@ -74,29 +74,37 @@ function Todo() {
     };
 
     return (
-        <div>
-            <h1>Todo List</h1>
-            <input
-                type="text"
-                value={newTodo}
-                onChange={(e) => setNewTodo(e.target.value)}
-                placeholder="Enter todo"
-            />
-            <button onClick={handleSaveTodo}>Add</button>
-            <button onClick={handleDeleteSelectedTodos}>Delete Selected</button>
-            <ul>
-                {todos.map((todo) => (
-                    <li key={todo._id} className={isTodoSelected(todo._id) ? 'selected' : ''}>
-                        {todo.text}
-                        <button onClick={() => handleDeleteTodo(todo._id)}>Delete</button>
-                        <button onClick={() => handleSelectTodo(todo._id)}>
-                            {isTodoSelected(todo._id) ? 'Unselect' : 'Select'}
-                        </button>
-                    </li>
-                ))}
-            </ul>
+        <div className="container">
+          <h1>Todo List</h1>
+          <input
+            type="text"
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+            placeholder="Enter todo"
+            className="todo-input"
+          />
+          <button onClick={handleSaveTodo} className="add-btn">Add</button>
+          <button onClick={handleDeleteSelectedTodos} className="delete-selected-btn">Delete Selected</button>
+          <br/>
+          <br/>
+          <br/>
+          <ul className="todo-list">
+            {todos.map((todo) => (
+              <li key={todo._id} className={isTodoSelected(todo._id) ? 'selected' : ''}>
+                {todo.text}
+                <div>
+
+                <button onClick={() => handleDeleteTodo(todo._id)} className="delete-btn">Delete</button>
+                <button onClick={() => handleSelectTodo(todo._id)} className="select-btn">
+                  {isTodoSelected(todo._id) ? 'Unselect' : 'Select'}
+                </button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
-    );
+      );
+      
 }
 
 export default Todo;
